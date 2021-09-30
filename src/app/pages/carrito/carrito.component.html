@@ -1,0 +1,15 @@
+<table>
+  <thead>
+      <tr>
+          <th>No. Pedido</th>
+          <th>Artículo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="">
+          <td>{{pedido.payload.doc.data().numeroPedido}}</td>
+          <td *ngFor="">{{pedido.payload.doc.data().Producto}}</td>
+      </tr>
+  </tbody>
+</table>
+

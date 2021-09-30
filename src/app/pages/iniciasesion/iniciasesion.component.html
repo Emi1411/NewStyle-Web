@@ -1,0 +1,58 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+    <div class="authBlock">
+
+      <h2 style="font-family:Gabriola;">Iniciar Sesión</h2>
+
+      <div class class="formGroup">
+        <input type="email" class="form-control" placeholder="E-Mail"
+          #userName required/>
+      </div>
+
+      <div class="formGroup">
+        <input type="password" class="form-control" placeholder="Contraseña"
+          #userPassword required/>
+      </div>
+
+      <div class="formGroup">
+        <input type="button" class="btn btn-primary btn-block" value="Iniciar sesion"
+        (click)="authService.login(userName.value,userPassword.value)"/>
+      </div>
+
+      <div class="formGroup">
+        <button type="button" class="btn btn-danger btn-block"
+        (click)="authService.googleAuth()"><i class="bi bi-google"></i>
+          Iniciar sesión con Google</button>
+      </div>
+      <div class="forgotPassword" >
+        <span type="button" style="color: white;" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">¿Olvidaste la contraseña?</span>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Recupera tu contraseña</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="formGroup">
+                    <input type="email" class="form-control" placeholder="E-Mail"
+                      #passwordResetEmail required />
+                  </div>
+                  <div class="formGroup">
+                    <input type="submit" class="btn btn-primary btn-block"
+                    value="Restablecer contraseña" (click)="authService.forgotPassword(passwordResetEmail.value)"/>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span routerLink="/forgot-password" style="color: white;"></span>
+      </div>
+    </div>
+    <div class="redirectToLogin" style="color: black;">
+      <span>¿Nuevo usuario? <span class="redirect" routerLink="/registro" style="color: black;">Registrate</span></span>
+    </div>
+  </div>
+</div>

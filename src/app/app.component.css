@@ -1,0 +1,15 @@
+footer {
+	background-color:black;
+	height: 20%;
+  color: white;
+  padding: 15px;
+}
+
+.main1 {
+  display:flex;
+  margin:0 auto;
+}
+
+a img:hover {
+    color: white;
+}
